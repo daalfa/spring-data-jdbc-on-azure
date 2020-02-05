@@ -32,7 +32,7 @@ public class PetController {
 
     @GetMapping("/{id}")
     public @ResponseBody Optional<Pet> getPet(@PathVariable Integer id) {
-        return Optional.ofNullable(petRepository.findById(id));
+        return petRepository.findById(id);
     }
 
     @DeleteMapping("/{id}")

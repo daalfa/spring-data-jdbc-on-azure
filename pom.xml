@@ -40,6 +40,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -50,47 +56,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>mysql</id>
-            <properties>
-                <database.platform>mysql</database.platform>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>mysql</groupId>
-                    <artifactId>mysql-connector-java</artifactId>
-                    <scope>runtime</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>postgresql</id>
-            <properties>
-                <database.platform>postgresql</database.platform>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.postgresql</groupId>
-                    <artifactId>postgresql</artifactId>
-                    <scope>runtime</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>sql</id>
-            <properties>
-                <database.platform>sqlserver</database.platform>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>com.microsoft.sqlserver</groupId>
-                    <artifactId>mssql-jdbc</artifactId>
-                    <scope>runtime</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-    </profiles>
 
 </project>
